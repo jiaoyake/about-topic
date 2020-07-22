@@ -1,0 +1,28 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 20:46:11
+ * @LastEditTime: 2020-07-22 20:51:23
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \未命名文件夹c:\Users\chenxf\Desktop\jiaoyake\剑指offer\代码\JZ18二叉树的镜像.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二叉树的镜像</title>
+</head>
+<body>
+    <script>
+        function Mirror(root) {
+            if(!root){return null;}
+            var temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+            Mirror(root.left);
+            Mirror(root.right)
+        }
+    </script>
+</body>
+</html>

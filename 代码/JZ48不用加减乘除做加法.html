@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-21 21:17:13
+ * @LastEditTime: 2020-07-21 21:28:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \未命名文件夹c:\Users\chenxf\Desktop\jiaoyake\剑指offer\JZ48不用加减乘除做加法.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Add(num1, num2) {
+            if(num1 === 0){
+                return num2;
+            }
+            if(num2 === 0){
+                return num1;
+            }
+            let A = num1^num2; 
+            let B= (num1 & num2) << 1; 
+            return Add(A, B);
+        }
+    </script>
+</body>
+</html>

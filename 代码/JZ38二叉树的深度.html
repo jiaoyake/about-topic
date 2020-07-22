@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 20:10:03
+ * @LastEditTime: 2020-07-22 20:16:45
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \未命名文件夹c:\Users\chenxf\Desktop\jiaoyake\剑指offer\代码\JZ38二叉树的深度.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二叉树的深度</title>
+</head>
+<body>
+    <script>
+        //1.递归
+        function TreeDepth(pRoot) {
+            if(!pRoot){return 0;}
+            return 1 + Math.max(TreeDepth(pRoot.left), TreeDepth(pRoot.right));
+        }
+        //2.
+        function TreeDepth(pRoot) {
+            if(!pRoot){return 0;}
+            let arr = [];
+            arr.push(pRoot);
+            let count = 0, round = 1,length = 0;
+            while(arr.length!=0){
+                count++;
+                let parent = arr.shift();
+                if(parent.left !== null){
+                    arr.push(parent.left);
+                }
+                if(parent.right !== null){
+                    arr.push(parent.right);
+                }
+                if(count === round){
+                    count = 0;
+                    round = arr.length;
+                    length++;
+                }
+            }
+            return length;
+        }
+    </script>
+</body>
+</html>
